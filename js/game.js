@@ -1299,7 +1299,7 @@ class Game {
             // 添加发光效果，但减小光晕范围，降低亮度
             this.ctx.globalAlpha = flickerAlpha * 0.3;
             const gradient = this.ctx.createRadialGradient(x, y, size * 0.5, x, y, size * 2);
-            gradient.addColorStop(0, softColors[colorIndex]);
+            gradient.addColorStop(0, softColors[colorIndex] || 'rgba(140, 170, 210, 0.5)');
             gradient.addColorStop(1, 'rgba(0,0,0,0)');
             this.ctx.fillStyle = gradient;
             this.ctx.beginPath();
