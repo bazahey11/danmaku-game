@@ -336,11 +336,11 @@ class Game {
         this.state = GameState.PLAYING;
         
         // 启动游戏循环
-        if (!this.isRunning) {
         this.isRunning = true;
-            this.lastTime = performance.now();
-            this.gameLoop();
-        }
+        this.lastTime = performance.now();
+        
+        // 使用requestAnimationFrame启动游戏循环
+        requestAnimationFrame((time) => this.gameLoop(time));
     }
     
     restartGame() {
